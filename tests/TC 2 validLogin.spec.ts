@@ -6,9 +6,9 @@ test('Valid login', async ({ page }) => {
     await page.click('button[aria-label="Consent"]');
     await expect(page).toHaveTitle('Automation Exercise');
 
-    // Click on 'Signup / Login' button and verify 'New User Signup!' is visible
+    // Click on 'Signup / Login' button and verify 'Login to your account' is visible
     await page.click('a[href="/login"]');
-    await expect(page.getByRole('heading', { name: 'New User Signup!'})).toBeVisible();
+    await expect(page.getByRole('heading', { name: 'Login to your account'})).toBeVisible();
 
     //Enter valid email address and password and click 'Login' button
     await page.fill('input[data-qa="login-email"]', '123test@test.com');
